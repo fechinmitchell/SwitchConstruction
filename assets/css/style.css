@@ -1,11 +1,10 @@
-
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -164,7 +163,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 56px;
   width: 100%;
   overflow: hidden;
-  transition: 0.3s;
 }
 
 .nav-menu a i {
@@ -431,7 +429,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 50px;
@@ -1105,11 +1103,9 @@ section {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Transformations
 --------------------------------------------------------------*/
-
 .transformation-image {
   max-width: 100%;
   max-height: 200px;
@@ -1158,7 +1154,7 @@ section {
 }
 
 #footer p {
-  font-size: 15;
+  font-size: 15px;
   font-style: italic;
   padding: 0;
   margin: 0 0 40px 0;
@@ -1195,4 +1191,92 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+# NEW RECENT PROJECTS SECTION: Project Cards & Modal
+--------------------------------------------------------------*/
+/* Grid of Project Cards */
+.recent-projects-section {
+  padding: 60px 0;
+}
+
+.recent-projects-section .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.recent-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 15px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card img {
+  width: 50%;  /* Make images 50% of the card's width */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.project-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card-overlay {
+  opacity: 1;
+}
+
+/* Modal & Carousel for Full-Screen Project View */
+.modal-fullscreen {
+  max-width: 100%;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.carousel-item img {
+  object-fit: contain;
+  height: 80vh;
+  width: 100%;
+}
+
+/* Responsive adjustments for the carousel images can be added here if needed */
+@media (min-width: 768px) {
+  .carousel-item img {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 80vh;
+  }
 }
