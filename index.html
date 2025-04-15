@@ -14,6 +14,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,128 +26,13 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- ========== Extra CSS for Dark Mode & Recent Projects (Project Cards & Modal) ========== -->
-  <style>
-    /* --- 1. DARK MODE TOGGLE --- */
-    body {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    body.dark-mode {
-      background-color: #1a1a1a;
-      color: #f5f5f5;
-    }
-    body.dark-mode .section-title h2,
-    body.dark-mode .section-title p,
-    body.dark-mode .icon-box,
-    body.dark-mode .portfolio-wrap,
-    body.dark-mode .info {
-      background-color: #2a2a2a !important;
-      color: #fff !important;
-    }
-    .theme-toggle-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 999;
-      width: 48px;
-      height: 48px;
-      border: none;
-      border-radius: 50%;
-      background: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      outline: none;
-      transition: background 0.3s ease;
-    }
-    .theme-toggle-btn:hover {
-      background: #555;
-    }
-    .theme-toggle-btn i {
-      font-size: 1.4rem;
-      color: #ffa500;
-    }
-    body.dark-mode .theme-toggle-btn i {
-      color: #ddd;
-    }
-
-    /* --- 2. FEATURED PROJECTS (unchanged from your original code) --- */
-    /* (No extra CSS here; your original CSS from assets/css/style.css and inline styles are used.) */
-
-    /* --- 3. RECENT PROJECTS: Responsive Project Cards Grid --- */
-    .recent-projects-section {
-      padding: 60px 0;
-    }
-    .recent-projects-section .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .recent-projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 0 15px;
-    }
-    .project-card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-    .project-card:hover {
-      transform: scale(1.03);
-    }
-    .project-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .project-card:hover img {
-      transform: scale(1.05);
-    }
-    .project-card-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .project-card:hover .project-card-overlay {
-      opacity: 1;
-    }
-
-    /* --- 4. MODAL & CAROUSEL FOR FULL-SCREEN PROJECT VIEW --- */
-    .modal-fullscreen {
-      max-width: 100%;
-      margin: 0;
-    }
-    .modal-body {
-      padding: 0;
-    }
-    .carousel-item img {
-      object-fit: contain;
-      height: 80vh;
-      width: 100%;
-    }
-  </style>
 </head>
 
 <body>
-
   <!-- Dark Mode Toggle Button -->
   <button class="theme-toggle-btn" id="themeToggleBtn"><i class="bx bx-sun"></i></button>
 
-  <!-- Mobile nav toggle button (for smaller screens) -->
+  <!-- Mobile nav toggle button -->
   <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
   <!-- Header -->
@@ -178,8 +64,7 @@
   </section>
 
   <main id="main">
-
-    <!-- Featured Projects Section (Your original Portfolio grid) -->
+    <!-- Featured Projects Section -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
@@ -198,19 +83,17 @@
           </div>
         </div>
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          <!-- Example Featured Project Item -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-spb">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/summerplace-1.jpeg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <p>Summer Place Bar Renovation</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/summerplace-1.jpeg" data-gall="portfolioGallery" class="venobox" title="O'Reillys Bar"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/summerplace-1.jpeg" data-gall="portfolioGallery" class="venobox" title="The Summer Place"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Repeat your other Featured Projects items as in your original code -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-mb">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/monaghans-1.jpeg" class="img-fluid" alt="">
@@ -250,7 +133,7 @@
               <div class="portfolio-info">
                 <p>Summer Place Bar Renovation</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/summerplace-2.jpeg" data-gall="portfolioGallery" class="venobox" title="O'Reillys Bar"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/summerplace-2.jpeg" data-gall="portfolioGallery" class="venobox" title="The Summer Place"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -283,7 +166,7 @@
               <div class="portfolio-info">
                 <p>Summer Place Bar Renovation</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/summerplace-6.jpeg" data-gall="portfolioGallery" class="venobox" title="O'Reillys Bar"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/summerplace-6.jpeg" data-gall="portfolioGallery" class="venobox" title="The Summer Place"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -317,6 +200,28 @@
                 <p>A Summer Place Renovation</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/summerplace-3.jpeg" data-gall="portfolioGallery" class="venobox" title="The Summer Place"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-spb">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/summerplace-7.jpeg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <p>A Summer Place Renovation</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/summerplace-7.jpeg" data-gall="portfolioGallery" class="venobox" title="The Summer Place"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-spb">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/summerplace-8.jpeg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <p>A Summer Place Renovation</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/summerplace-8.jpeg" data-gall="portfolioGallery" class="venobox" title="The Summer Place"><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -406,34 +311,69 @@
       </div>
     </section>
 
-    <!-- Recent Projects Section: New Grid of Project Cards with Modal -->
+    <!-- Recent Projects Section -->
     <section id="recent-projects" class="recent-projects-section section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Recent Projects</h2>
           <p>Click on a project to view all images in full screen.</p>
         </div>
-        <div class="recent-projects-grid">
+        <div class="recent-projects-carousel owl-carousel">
           <!-- Project Card: Ellie Street -->
           <div class="project-card" data-project-title="Ellie Street" data-images='["assets/img/recentprojects/elliestreet/elliestreet-1.jpeg", "assets/img/recentprojects/elliestreet/elliestreet-2.jpeg", "assets/img/recentprojects/elliestreet/elliestreet-3.jpeg", "assets/img/recentprojects/elliestreet/elliestreet-4.jpeg", "assets/img/recentprojects/elliestreet/elliestreet-5.jpeg", "assets/img/recentprojects/elliestreet/elliestreet-6.jpeg"]'>
-            <img src="assets/img/recentprojects/elliestreet/elliestreet-1.jpeg" alt="Ellie Street">
+            <img src="assets/img/recentprojects/elliestreet/elliestreet-4.jpeg" alt="Ellie Street">
             <div class="project-card-overlay">
               <h3>Ellie Street</h3>
             </div>
           </div>
           <!-- Project Card: Graystone -->
-          <div class="project-card" data-project-title="Graystone" data-images='["assets/img/recentprojects/graystone/graystone-1.jpeg", "assets/img/recentprojects/graystone/graystone-2.jpeg", "assets/img/recentprojects/graystone/graystone-3.jpeg"]'>
+          <div class="project-card" data-project-title="Graystone" data-images='["assets/img/recentprojects/graystone/graystone-1.jpeg", "assets/img/recentprojects/graystone/graystone-2.jpeg", "assets/img/recentprojects/graystone/graystone-3.jpeg", "assets/img/recentprojects/graystone/graystone-4.jpeg", "assets/img/recentprojects/graystone/graystone-5.jpeg"]'>
             <img src="assets/img/recentprojects/graystone/graystone-1.jpeg" alt="Graystone">
             <div class="project-card-overlay">
               <h3>Graystone</h3>
             </div>
           </div>
-          <!-- Add additional project cards here for up to 20 projects -->
+          <!-- Add more projects here -->
+          <div class="project-card" data-project-title="Berkeley" data-images='["assets/img/recentprojects/berkeley/berkeley-1.jpeg", "assets/img/recentprojects/berkeley/berkeley-2.jpeg", "assets/img/recentprojects/berkeley/berkeley-3.jpeg", "assets/img/recentprojects/berkeley/berkeley-4.jpeg", "assets/img/recentprojects/berkeley/berkeley-5.jpeg", "assets/img/recentprojects/berkeley/berkeley-6.jpeg", "assets/img/recentprojects/berkeley/berkeley-7.jpeg", "assets/img/recentprojects/berkeley/berkeley-8.jpeg", "assets/img/recentprojects/berkeley/berkeley-9.jpeg"]'>
+            <img src="assets/img/recentprojects/berkeley/berkeley-1.jpeg" alt="Berkeley">
+            <div class="project-card-overlay">
+              <h3>Berkeley</h3>
+            </div>
+          </div>
+
+          <div class="project-card" data-project-title="30th Avenue" data-images='["assets/img/recentprojects/30th-avenue/30th-avenue-1.jpeg", "assets/img/recentprojects/30th-avenue/30th-avenue-2.jpeg", "assets/img/recentprojects/30th-avenue/30th-avenue-3.jpeg", "assets/img/recentprojects/30th-avenue/30th-avenue-4.jpeg", "assets/img/recentprojects/30th-avenue/30th-avenue-5.jpeg"]'>
+            <img src="assets/img/recentprojects/30th-avenue/30th-avenue-2.jpeg" alt="30th Avenue">
+            <div class="project-card-overlay">
+              <h3>30th Avenue</h3>
+            </div>
+          </div>
+
+          <div class="project-card" data-project-title="Christmas Bar" data-images='["assets/img/recentprojects/christmasbar/christmas-1.jpeg", "assets/img/recentprojects/christmasbar/christmas-2.jpeg", "assets/img/recentprojects/christmasbar/christmas-3.jpeg", "assets/img/recentprojects/christmasbar/christmas-4.jpeg", "assets/img/recentprojects/christmasbar/christmas-5.jpeg", "assets/img/recentprojects/christmasbar/christmas-6.jpeg", "assets/img/recentprojects/christmasbar/christmas-7.jpeg"]'>
+            <img src="assets/img/recentprojects/christmasbar/christmas-1.jpeg" alt="Christmas Bar">
+            <div class="project-card-overlay">
+              <h3>Christmas Bar</h3>
+            </div>
+          </div>
+
+          <div class="project-card" data-project-title="Edgehill" data-images='["assets/img/recentprojects/edgehill/edgehill-1.jpeg", "assets/img/recentprojects/edgehill/edgehill-2.jpeg", "assets/img/recentprojects/edgehill/edgehill-3.jpeg", "assets/img/recentprojects/edgehill/edgehill-4.jpeg", "assets/img/recentprojects/edgehill/edgehill-5.jpeg", "assets/img/recentprojects/edgehill/edgehill-6.jpeg", "assets/img/recentprojects/edgehill/edgehill-7.jpeg", "assets/img/recentprojects/edgehill/edgehill-8.jpeg", "assets/img/recentprojects/edgehill/edgehill-9.jpeg", "assets/img/recentprojects/edgehill/edgehill-10.jpeg", "assets/img/recentprojects/edgehill/edgehill-11.jpeg", "assets/img/recentprojects/edgehill/edgehill-12.jpeg"]'>
+            <img src="assets/img/recentprojects/edgehill/edgehill-11.jpeg" alt="Edgehill">
+            <div class="project-card-overlay">
+              <h3>Edgehill</h3>
+            </div>
+          </div>
+
+          <div class="project-card" data-project-title="San Jose Courtyard" data-images='["assets/img/recentprojects/sanjose-courtyard/sj-courtyard-1.jpeg", "assets/img/recentprojects/sanjose-courtyard/sj-courtyard-2.jpeg", "assets/img/recentprojects/sanjose-courtyard/sj-courtyard-3.jpeg", "assets/img/recentprojects/sanjose-courtyard/sj-courtyard-4.jpeg", "assets/img/recentprojects/sanjose-courtyard/sj-courtyard-5.jpeg", "assets/img/recentprojects/sanjose-courtyard/sj-courtyard-6.jpeg" ]'>
+            <img src="assets/img/recentprojects/sanjose-courtyard/sj-courtyard-3.jpeg" alt="San Jose Courtyard">
+            <div class="project-card-overlay">
+              <h3>San Jose Courtyard</h3>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Testimonials (Reviews) Section -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
@@ -449,7 +389,6 @@
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
-          <!-- Add more testimonial items as needed -->
         </div>
       </div>
     </section>
@@ -486,7 +425,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer Section -->
@@ -525,17 +463,18 @@
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- ========== Modal for Full Screen Project Images ========== -->
+  <!-- Modal for Full Screen Project Images -->
   <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="projectModalLabel"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 2rem;">
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">×</span>
           </button>
         </div>
         <div class="modal-body">
@@ -556,20 +495,50 @@
     </div>
   </div>
 
-  <!-- ========== Custom JS for Dark Mode & Recent Projects Modal ========== -->
+  <!-- Custom JS for Dark Mode, Recent Projects Carousel & Modal -->
   <script>
-    /************************************************
-     * 1. DARK MODE TOGGLE
-     ***********************************************/
+    // Dark Mode Toggle
     const body = document.body;
     const toggleBtn = document.getElementById('themeToggleBtn');
     toggleBtn.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
     });
 
-    /************************************************
-     * 2. PROJECT CARD CLICK: Open Modal with Carousel
-     ***********************************************/
+    // Initialize Owl Carousel for Recent Projects with updated settings
+    $(document).ready(function(){
+      $('.recent-projects-carousel').owlCarousel({
+        loop: true,
+        margin: 10, // Reduced margin between items
+        nav: true,
+        dots: false,
+        center: true, // Enable center mode for better mobile display
+        autoWidth: false,
+        navText: [
+          '<i class="bx bx-chevron-left"></i>',
+          '<i class="bx bx-chevron-right"></i>'
+        ],
+        responsive: {
+          0: {
+            items: 1,
+            center: true // Explicitly set center mode for mobile
+          },
+          576: {
+            items: 2,
+            center: false
+          },
+          768: {
+            items: 3,
+            center: false
+          },
+          992: {
+            items: 4, // Show 4 items on desktop
+            center: false
+          }
+        }
+      });
+    });
+
+    // Project Card Click: Open Modal with Carousel
     document.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('click', function () {
         const projectTitle = this.getAttribute('data-project-title');
@@ -604,11 +573,10 @@
           carouselInner.appendChild(carouselItem);
         });
 
-        // Show the modal (requires jQuery & Bootstrap JS)
+        // Show the modal
         $('#projectModal').modal('show');
       });
     });
   </script>
-
 </body>
 </html>

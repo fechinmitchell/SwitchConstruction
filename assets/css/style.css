@@ -138,7 +138,6 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Desktop Navigation */
 .nav-menu * {
   margin: 0;
   padding: 0;
@@ -202,7 +201,6 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-/* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
@@ -1194,11 +1192,59 @@ section {
 }
 
 /*--------------------------------------------------------------
-# NEW RECENT PROJECTS SECTION: Project Cards & Modal
+# Dark Mode Toggle
 --------------------------------------------------------------*/
-/* Grid of Project Cards */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+body.dark-mode .section-title h2,
+body.dark-mode .section-title p,
+body.dark-mode .icon-box,
+body.dark-mode .portfolio-wrap,
+body.dark-mode .info {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+}
+
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: #555;
+}
+
+.theme-toggle-btn i {
+  font-size: 1.4rem;
+  color: #ffa500;
+}
+
+body.dark-mode .theme-toggle-btn i {
+  color: #ddd;
+}
+
+/*--------------------------------------------------------------
+# Recent Projects Section - UPDATED
+--------------------------------------------------------------*/
 .recent-projects-section {
   padding: 60px 0;
+  overflow: hidden;
 }
 
 .recent-projects-section .section-title {
@@ -1206,11 +1252,11 @@ section {
   margin-bottom: 40px;
 }
 
-.recent-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 0 15px;
+.recent-projects-carousel {
+  position: relative;
+  padding: 0 40px; /* Add padding to make room for the arrows */
+  max-width: 1200px; /* Limit maximum width */
+  margin: 0 auto; /* Center the carousel */
 }
 
 .project-card {
@@ -1219,37 +1265,96 @@ section {
   cursor: pointer;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+  margin: 0 auto; /* Changed from 0 5px to 0 auto for centering */
+  width: 220px; /* Adjusted width for 4 cards to fit */
+  height: 300px;
   background: #fff;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
+  transition: transform 0.3s ease;
 }
 
 .project-card img {
-  width: 50%;  /* Make images 50% of the card's width */
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  margin: 0 auto;
-  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .project-card-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   color: #fff;
   padding: 10px;
   text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+.project-card-overlay h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff;
 }
 
 .project-card:hover .project-card-overlay {
-  opacity: 1;
+  background: rgba(0,0,0,0.85);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Owl Carousel Navigation - UPDATED */
+.recent-projects-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* This ensures clicks pass through to the buttons */
+}
+
+.recent-projects-carousel .owl-nav button.owl-prev,
+.recent-projects-carousel .owl-nav button.owl-next {
+  background: rgba(0,0,0,0.5) !important;
+  color: #fff !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem !important;
+  position: absolute;
+  pointer-events: auto; /* Re-enable clicks on the buttons */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.recent-projects-carousel .owl-nav button.owl-prev {
+  left: 0;
+}
+
+.recent-projects-carousel .owl-nav button.owl-next {
+  right: 0;
+}
+
+.recent-projects-carousel .owl-nav button:hover {
+  background: rgba(0,0,0,0.8) !important;
+  transform: scale(1.1);
+}
+
+.recent-projects-carousel .owl-nav button span {
+  line-height: 0;
+  font-size: 24px;
 }
 
 /* Modal & Carousel for Full-Screen Project View */
@@ -1263,20 +1368,41 @@ section {
 }
 
 .carousel-item img {
-  object-fit: contain;
+  width: 60vw;
   height: 80vh;
-  width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Responsive adjustments for the carousel images can be added here if needed */
+/* Mobile Centering - ADDED */
+@media (max-width: 575px) {
+  .recent-projects-carousel .owl-stage {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .recent-projects-carousel .owl-item {
+    display: flex;
+    justify-content: center;
+    width: 100% !important; /* Force full width */
+  }
+  
+  .project-card {
+    margin: 0 auto !important; /* Force centering with !important */
+  }
+}
+
 @media (min-width: 768px) {
   .carousel-item img {
-    height: 40vh;
+    width: 50vw;
+    height: 70vh;
   }
 }
 
 @media (max-width: 767px) {
   .carousel-item img {
-    height: 80vh;
+    width: 80vw;
+    height: 90vh;
   }
 }
